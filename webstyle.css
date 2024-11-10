@@ -1,0 +1,387 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(image/IMG_5578.JPG);
+    margin: 0px;
+}
+
+header {
+    background-color: #3a5a40;
+    color: white;
+    margin: 0px;
+    padding: 20px;
+    font-size: large;
+    font-family: 微軟正黑體;
+}
+
+.information {
+    display: flex;
+    flex-direction: column; /* 垂直排列每個 .info-item */
+    gap: 15px; /* 每個 .info-item 之間的間距 */
+    margin-left: 0px;
+    margin-top: 120px;
+}
+  
+.info-item {
+    display: flex;
+    align-items: center; /* 垂直置中圖片和文字 */
+    gap: 10px; /* 圖片和文字之間的間距 */
+}
+
+.info-item img {
+    width: 45px; /* 設置所有圖片相同的寬度 */
+    height: 45px; /* 設置所有圖片相同的高度 */
+}
+  
+.info-item span {
+    font-size: 20px; /* 調整文字大小 */
+    color: white; /* 文字顏色 */
+}
+
+.larger-image {
+    width: 55px !important; /* 強制設置特定圖片大小 */
+    height: 55px !important;
+    display: block;
+    margin-left: -5px;
+}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* 垂直居中對齊 */
+    justify-content: space-between; /* 讓內容兩端對齊 */
+    margin-left: 50px;
+}
+
+.right-image {
+    border-radius: 12px;
+    margin-right: 100px;
+    border-style: solid;
+    border-color: white;
+    border-width: thick;
+    size: 30px;
+    width: 300px;
+    height: auto;
+}
+
+.text-content {
+    text-align: left;
+}
+
+nav {
+    background-color: #588157;
+    text-align: center;
+    font-family: MV Boli;
+    font-size: large;
+    padding: 10px;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #a3b18a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block; /* 使每個鏈接像按鈕一樣 */
+}
+
+.nav-button:hover {
+    background-color: #6a994e; /* 滑鼠懸停時的顏色 */
+}
+
+a{text-decoration:none}
+a:hover{text-decoration:none}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 50px; /* 每個技能項之間的間距 */
+    max-width: 600px; /* 控制區域的最大寬度 */
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+  
+.skill {
+    flex: 1 1 45%; /* 設置每個項目的寬度為容器的45%，允許換行 */
+    min-width: 200px; /* 設置最小寬度，防止太小 */
+    margin-bottom: 20px;
+}
+  
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    font-size: 20px;
+}
+  
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+}
+  
+.progress {
+    height: 100%;
+    background-color: #588157;
+    border-radius: 8px 0 0 8px; /* 左側圓角 */
+    transition: width 10s ease; /* 添加平滑動畫效果 */
+}
+
+.multi-image .images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+  
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 300px; /* 固定圖片容器的寬度，保證大小一致 */
+    height: 210px; /* 固定高度，與寬度比例一致 */
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-container .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden; /* 確保內容不超出圓角 */
+}
+
+.image-container .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 90%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.image-container:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.image-container:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.image-word {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    opacity: 0; /* 初始時文字隱藏 */
+    transition: opacity 0.4s ease-in-out;
+}
+
+.image-container:hover .image-word {
+    opacity: 1; /* 懸停時顯示文字 */
+}
+
+.image-container p {
+    margin: 10px 0 0;
+    text-align: center;
+    color: white;
+}
+
+footer {
+    background-color: #588157;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* 讓標題在上方，內容在下方 */
+    align-items: flex-start; /* 將標題和內容對齊到左側 */
+    gap: 20px; /* 標題和內容之間的間距 */
+    background-image: url('image/back.jpg');
+    background-size: cover;
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 15px;
+}
+
+.card img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.card p {
+    flex: 1;
+}
+
+.card h2{
+    font-size: 50;
+    font-family: MV Boli;
+    align-self: flex-start;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+  
+.content img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.content p {
+    flex: 1; /* 讓文字填滿剩餘空間 */
+    font-size: 20px;
+}
+
+.reverse .content {
+    flex-direction: row-reverse; /* 讓內容反轉排列，圖片在右，文字在左 */
+}
+
+article{
+    float: right;
+    width: 95%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.underline-center-link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.underline-center-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color:white;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+  
+.underline-center-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed; /* 改為 fixed */
+    bottom: 20px; /* 距離底部 20px */
+    left: 20px; /* 距離左側 20px */
+    margin: 0; /* 移除 margin，以確保位置固定 */
+}
+
+  
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+  
+.svgIcon path {
+    fill: white;
+}
+  
+.button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(181, 160, 255);
+    align-items: center;
+}
+  
+.button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+  
+.button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+}
+  
+.button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+}
+  
+@media screen and (max-width:800px) {
+    article , aside {
+        float:none;
+        width: 100%;
+    }
+    .card{
+        padding: 15px;
+        margin: 15px 0px;
+    }
+    img{
+        max-width: 100%;
+        height: 90%;
+    }
+}
